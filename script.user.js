@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          anroyalp.github.io
 // @namespace     anroyalp.github.io
-// @version       0.0.2
+// @version       0.0.3
 // @description   anroyalp.github.io
 // @include       https://playorna.com/*
 // @run-at        document-end
@@ -16,10 +16,10 @@
   const fonts = document.createElement('script')
   const game = document.createElement('script')
 
-  fonts.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.2/fonts-3.11.7.js'
-  game.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.2/game-3.11.7.js'
+  fonts.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.3/fonts-3.11.7.js'
+  game.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.3/game-3.11.7.js'
 
-  document.documentElement.appendChild(script)
+  document.documentElement.appendChild(fonts)
   document.documentElement.appendChild(game)
 })(
   // @ts-ignore

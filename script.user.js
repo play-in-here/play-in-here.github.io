@@ -3,7 +3,7 @@
 // @namespace     anroyalp.github.io
 // @version       0.0.5
 // @description   anroyalp.github.io
-// @include       https://playorna.com/*
+// @match         https://playorna.com/*
 // @run-at        document-end
 // @grant         unsafeWindow
 // @noframes
@@ -11,19 +11,19 @@
 /* global unsafeWindow */
 (window => {
   const { document } = window
-  
+
   window.APP_VERSION = '3.11.7'
   window.CONTENT_VERSION = '3.11.0'
   window.STATIC_URL = './static/'
   window.SERVER_URI = 'https://playorna.com'
   window.CHAT_URI = 'wss://chat.orna.gg/ws/'
   window.I18N_ENABLED = true
-  window.DEBUG =  false
-  window.SANDBOX =  false
-  
+  window.DEBUG = false
+  window.SANDBOX = false
+
   document.body.className = 'game'
   document.body.innerHTML = '<div id="app"></div>'
-  
+
   const fonts = document.createElement('script')
   const game = document.createElement('script')
 
@@ -35,7 +35,9 @@
 
   game.onload = () => {
     document.querySelectorAll('style').forEach(style => {
-      style.textContent = style.textContent.replaceAll('"img/', '"static/img/')
+      style.textContent = style.textContent
+          .replaceAll('"img/', '"static/img/')
+          .replaceAll('"fonts/', '"static/fonts/')
     })
   }
 })(

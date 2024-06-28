@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          anroyalp.github.io
 // @namespace     anroyalp.github.io
-// @version       0.0.1
+// @version       0.0.2
 // @description   anroyalp.github.io
 // @include       https://playorna.com/*
 // @run-at        document-end
@@ -10,12 +10,17 @@
 // ==/UserScript==
 /* global unsafeWindow */
 (({ document }) => {
-  const script = document.createElement('script')
+  document.body.className = 'game'
+  document.body.innerHTML = '<div id="app"></div>'
+  
+  const fonts = document.createElement('script')
+  const game = document.createElement('script')
 
-  script.id = 'anroyalp.github.io'
-  script.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.1/test.js'
+  fonts.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.2/fonts-3.11.7.js'
+  game.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.2/game-3.11.7.js'
 
   document.documentElement.appendChild(script)
+  document.documentElement.appendChild(game)
 })(
   // @ts-ignore
   unsafeWindow

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          anroyalp.github.io
 // @namespace     anroyalp.github.io
-// @version       0.0.0
+// @version       0.0.1
 // @description   anroyalp.github.io
 // @include       https://playorna.com/*
 // @run-at        document-end
@@ -13,7 +13,7 @@
   const script = document.createElement('script')
 
   script.id = 'anroyalp.github.io'
-  script.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.0/test.js'
+  script.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.1/test.js'
 
   document.documentElement.appendChild(script)
 })(

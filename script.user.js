@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name          anroyalp.github.io
 // @namespace     anroyalp.github.io
-// @version       0.0.3
+// @version       0.0.4
 // @description   anroyalp.github.io
 // @include       https://playorna.com/*
 // @run-at        document-end
@@ -9,15 +9,26 @@
 // @noframes
 // ==/UserScript==
 /* global unsafeWindow */
-(({ document }) => {
+(window => {
+  const { document } = window
+  
+  window.APP_VERSION = '3.11.7'
+  window.CONTENT_VERSION = '3.11.0'
+  window.STATIC_URL = './static/'
+  window.SERVER_URI = 'https://playorna.com'
+  window.CHAT_URI = 'wss://chat.orna.gg/ws/'
+  window.I18N_ENABLED = true
+  window.DEBUG =  false
+  window.SANDBOX =  false
+  
   document.body.className = 'game'
   document.body.innerHTML = '<div id="app"></div>'
   
   const fonts = document.createElement('script')
   const game = document.createElement('script')
 
-  fonts.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.3/fonts-3.11.7.js'
-  game.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.3/game-3.11.7.js'
+  fonts.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.4/fonts-3.11.7.js'
+  game.src = 'https://cdn.jsdelivr.net/gh/anroyalp/anroyalp.github.io@0.0.4/game-3.11.7.js'
 
   document.documentElement.appendChild(fonts)
   document.documentElement.appendChild(game)

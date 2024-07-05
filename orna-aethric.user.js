@@ -68,6 +68,19 @@
       return appendChildOrigin.apply(document.head, [ch])
     }
 
+    if (aethric) {
+      const protIMG = Object.getPrototypeOf(document.createElement('img'))
+      const setAttrOriginIMG = protIMG.setAttribute
+
+      protIMG.setAttribute = function setAttribute(name, value) {
+        if (name === 'src' && value && value.includes('/img/avalon/')) {
+          value = value.replace('./static', cdn)
+        }
+
+        return setAttrOriginIMG.apply(this, [name, value])
+      }
+    }
+
     if (s) {
       window.$tms = () => onload()
     } else {

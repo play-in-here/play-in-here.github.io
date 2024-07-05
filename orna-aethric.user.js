@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          play-in-here - orna/aethric
-// @version       0.0.3
+// @version       0.0.4
 // @match         https://playorna.com
 // @match         https://aethric.com
 // @run-at        document-end
@@ -90,6 +90,8 @@
       }
     }
 
+    document.body.style.overscrollBehaviorX = 'none'
+    document.body.style.overscrollBehaviorY = 'none'
     document.body.className = 'game'
     document.body.innerHTML = '<div id="app"></div>'
     document.documentElement.appendChild(font)

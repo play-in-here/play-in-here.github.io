@@ -7,4 +7,4 @@
 
 # Scripts
 
-- [Orna GPS RPG](https://playorna.com) / [Hero of Aethric](https://aethric.com) - http://play-in-here.github.io/orna-aethric.user.js
+- [Orna GPS RPG](https://playorna.com) / [Hero of Aethric](https://aethric.com) - [https://play-in-here.github.io/orna-aethric.user.js](https://play-in-here.github.io/orna-aethric.user.js)

@@ -1,8 +1,8 @@
 // ==UserScript==
 // @name          play-in-here - orna/aethric
-// @version       0.0.2
-// @match         https://playorna.com/*
-// @match         https://aethric.com/*
+// @version       0.0.3
+// @match         https://playorna.com
+// @match         https://aethric.com
 // @run-at        document-end
 // @grant         unsafeWindow
 // @noframes

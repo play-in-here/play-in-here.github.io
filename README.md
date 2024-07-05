@@ -8,3 +8,15 @@
 # Scripts
 
 - [Orna GPS RPG](https://playorna.com) / [Hero of Aethric](https://aethric.com) - [https://play-in-here.github.io/orna-aethric.user.js](https://play-in-here.github.io/orna-aethric.user.js)
+
+# Browsers
+
+Checked for the desktop:
+
+- Mozilla Firefox
+- Google Chrome
+
+Checked for the mobile:
+
+- Lemur Browser
+- Mozilla Firefox

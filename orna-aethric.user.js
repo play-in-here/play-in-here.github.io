@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          play-in-here - orna/aethric
-// @version       0.0.4
+// @version       0.0.5
 // @match         https://playorna.com
 // @match         https://aethric.com
 // @run-at        document-end
@@ -79,6 +79,17 @@
 
         return setAttrOriginIMG.apply(this, [name, value])
       }
+
+      Object.defineProperty(protIMG, 'src', {
+        get() {
+          return this.getAttribute('src')
+        },
+        set(value) {
+          this.setAttribute('src', value)
+        },
+        enumerable: true,
+        configurable: true
+      })
     }
 
     if (s) {

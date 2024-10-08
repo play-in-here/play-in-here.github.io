@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          play-in-here - orna/aethric
-// @version       0.0.5
+// @version       0.0.6
 // @match         https://playorna.com
 // @match         https://aethric.com
 // @run-at        document-end
@@ -41,12 +41,12 @@
       game.src = `${s}${cdn}/avalon-d2aeef6df3024b92a2a4.js`
     } else {
       window.REALM = 'gps'
-      window.APP_VERSION = '3.11.10'
-      window.CONTENT_VERSION = '3.11.0'
+      window.APP_VERSION = '3.12.8'
+      window.CONTENT_VERSION = '3.11.2'
       window.SERVER_URI = 'https://playorna.com'
 
       font.src = `${cdn}/fonts-61de7ed52a106deeda28.js`
-      game.src = `${s}${cdn}/gps-5c1af58d04f71d003087.js`
+      game.src = `${s}${cdn}/gps-bea8f193e11dcec24486.js`
     }
 
     window.STATIC_URL = './static/'

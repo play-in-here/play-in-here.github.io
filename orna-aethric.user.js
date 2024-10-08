@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          play-in-here - orna/aethric
-// @version       0.0.6
+// @version       0.0.7
 // @match         https://playorna.com
 // @match         https://aethric.com
 // @run-at        document-end

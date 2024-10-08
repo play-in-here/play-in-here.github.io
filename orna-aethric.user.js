@@ -1,6 +1,6 @@
 // ==UserScript==
 // @name          play-in-here - orna/aethric
-// @version       0.0.7
+// @version       0.0.8
 // @match         https://playorna.com
 // @match         https://aethric.com
 // @run-at        document-end
@@ -90,21 +90,20 @@
         enumerable: true,
         configurable: true
       })
-    } else {
-      if (!s) {
-        if (typeof window?.appinterface?.grantPermission === 'function') {
-          // @ts-ignore
-          window.appinterface.grantPermission('location', true)
-          // @ts-ignore
-          window.appinterface.grantPermission('activity', true)
-        }
-      }
     }
 
     if (s) {
       window.$tms = () => onload()
     } else {
       game.onload = () => {
+        if (!aethric) {
+          if (typeof window?.appinterface?.grantPermission === 'function') {
+            // @ts-ignore
+            window.appinterface.grantPermission('location', true)
+            // @ts-ignore
+            window.appinterface.grantPermission('activity', true)
+          }
+        }
         onload()
         window.onload()
       }

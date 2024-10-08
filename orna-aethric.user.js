@@ -33,12 +33,12 @@
 
     if (aethric) {
       window.REALM = 'avalon'
-      window.APP_VERSION = '1.6.10'
-      window.CONTENT_VERSION = '3.11.0'
+      window.APP_VERSION = '1.6.13'
+      window.CONTENT_VERSION = '3.11.2'
       window.SERVER_URI = 'https://prod.aethric.com'
 
       font.src = `${cdn}/fonts-61de7ed52a106deeda28.js`
-      game.src = `${s}${cdn}/avalon-d2aeef6df3024b92a2a4.js`
+      game.src = `${s}${cdn}/avalon-c08ad879d52096227cc8.js`
     } else {
       window.REALM = 'gps'
       window.APP_VERSION = '3.12.8'

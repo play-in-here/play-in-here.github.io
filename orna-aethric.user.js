@@ -90,6 +90,15 @@
         enumerable: true,
         configurable: true
       })
+    } else {
+      if (!s) {
+        if (typeof window?.appinterface?.grantPermission === 'function') {
+          // @ts-ignore
+          window.appinterface.grantPermission('location', true)
+          // @ts-ignore
+          window.appinterface.grantPermission('activity', true)
+        }
+      }
     }
 
     if (s) {

@@ -1,5 +1,11 @@
-export function playNow() {
-  console.log('playNow orna')
+/** @param {Window} window */
+export function playNow(window) {
+  const html = window.document.getElementsByTagName('html').item(0)
+  html.className = 'game'
+  html.style.backgroundColor = '#000'
+  html.innerHTML = `
+
+  `
 }
 
 /*

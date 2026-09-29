@@ -60,15 +60,17 @@ export function playNow(window) {
       </div>
     </body>
   `
-    .replace('src="./img','src="https://playorna.com/static/img')
-    .replace(`STATIC_URL = './'`,`STATIC_URL = 'https://playorna.com/static/'`)
+    .replace('src="./img', 'src="https://playorna.com/static/img')
+    .replace(`STATIC_URL = './'`, `STATIC_URL = 'https://playorna.com/static/'`)
     .replaceAll('./', "https://play-in-here.github.io/orna/")
 
   html.className = 'game'
   html.style.backgroundColor = '#000'
   html.innerHTML = gameML
 
-  window.onload()
+  setTimeout(() => {
+    window.onload(new Event('onload'))
+  }, 3000)
 }
 
 /*

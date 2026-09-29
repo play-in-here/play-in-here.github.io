@@ -62,11 +62,13 @@ export function playNow(window) {
   `
     .replace('src="./img','src="https://playorna.com/static/img')
     .replace(`STATIC_URL = './'`,`STATIC_URL = 'https://playorna.com/static/'`)
-    .replaceAll('"./', "https://play-in-here.github.io/orna/")
+    .replaceAll('./', "https://play-in-here.github.io/orna/")
 
   html.className = 'game'
   html.style.backgroundColor = '#000'
   html.innerHTML = gameML
+
+  window.onload()
 }
 
 /*

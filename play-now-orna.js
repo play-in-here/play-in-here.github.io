@@ -1,5 +1,5 @@
 /** @param {Window} window */
-export function playNow(window) {
+function playNow(window) {
   const cdn = 'https://play-in-here.github.io/orna/'
   const html = window.document.getElementsByTagName('html').item(0)
   const head = window.document.head
@@ -54,11 +54,19 @@ export function playNow(window) {
   const loaded = []
 
   for (const stylesheet of stylesheets) {
-    const stl = document.createElement('link')
+    loaded.push(new Promise(async resolve => {
+      const style = document.createElement('style')
+      let stlText = await fetch(`${cdn}${stylesheet}`)
 
-    stl.href = `${cdn}${stylesheet}`
-    stl.rel = 'stylesheet'
-    head.appendChild(stl)
+      stlText = await stlText.text()
+      style.textContent = stlText
+        .replaceAll('url(img/', 'url(https://playorna.com/static/img/')
+        .replaceAll('url(fonts/', 'url(https://playorna.com/static/fonts/')
+        .replaceAll('url(/static/fonts/', 'url(https://playorna.com/static/fonts/')
+      style.type = 'text/css'
+      head.appendChild(style)
+      resolve()
+    }))
   }
 
   for (const script of scripts) {
@@ -88,3 +96,5 @@ export function playNow(window) {
   playNow(window)
 })()
 */
+
+export { playNow }

@@ -91,8 +91,8 @@ function playNow(window) {
 
 // playNow(window)
 /*
-(async ()=>{
-  const {playNow} = await import('https://play-in-here.github.io/play-now-orna.js')
+(async () => {
+  const { playNow } = await import('https://play-in-here.github.io/play-now-orna.js')
   playNow(window)
 })()
 */

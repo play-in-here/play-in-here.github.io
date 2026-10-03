@@ -87,6 +87,43 @@ function playNow(window) {
     window.appinterface.grantPermission('activity', true)
     window.onload(new Event('onload'))
   })
+
+  let isZoomMap = false
+
+  window.addEventListener('wheel', (/** @type {WheelEvent} */event) => zoomMap(event.deltaY))
+
+  async function zoomMap(delta) {
+    if (isZoomMap) return false
+    isZoomMap = true
+
+    const target = document.querySelector('.mapboxgl-canvas')
+
+    if (!target) return (isZoomMap = false)
+
+    const ctr = window.screen.height / 2 ^ 0
+    const dy1 = ctr - ctr / 2 ^ 0
+    const dy2 = ctr + ctr / 2 ^ 0
+    const p1 = { identifier: Math.random() * 1000000 ^ 0, target, clientX: 0, clientY: dy1, screenX: 0, screenY: dy1, pageX: 0, pageY: dy1 }
+    const p2 = { identifier: Math.random() * 1000000 ^ 0, target, clientX: 0, clientY: dy2, screenX: 0, screenY: dy2, pageX: 0, pageY: dy2 }
+    let pt1 = new Touch(p1)
+    let pt2 = new Touch(p2)
+
+    target.dispatchEvent(new TouchEvent('touchstart', { targetTouches: [pt1, pt2], touches: [pt1, pt2], changedTouches: [pt1, pt2], bubbles: true, cancelable: true }))
+    await new Promise(resolve => setTimeout(resolve, 25))
+
+    target.dispatchEvent(new TouchEvent('touchmove', { targetTouches: [pt1, pt2], touches: [pt1, pt2], changedTouches: [pt1, pt2], bubbles: true, cancelable: true }))
+    await new Promise(resolve => setTimeout(resolve, 25))
+
+    p1.clientY = p1.screenY = p1.pageY = p1.clientY + delta
+    p2.clientY = p2.screenY = p2.pageY = p2.clientY - delta
+    pt1 = new Touch(p1)
+    pt2 = new Touch(p2)
+    target.dispatchEvent(new TouchEvent('touchmove', { targetTouches: [pt1, pt2], touches: [pt1, pt2], changedTouches: [pt1, pt2], bubbles: true, cancelable: true }))
+    await new Promise(resolve => setTimeout(resolve, 25))
+
+    target.dispatchEvent(new TouchEvent('touchend', { targetTouches: [pt1, pt2], touches: [pt1, pt2], changedTouches: [pt1, pt2], bubbles: true, cancelable: true }))
+    isZoomMap = false
+  }
 }
 
 // playNow(window)

@@ -35,7 +35,7 @@ function playNow(window) {
   window.REALM = 'gps';
   window.APP_VERSION = '3.26.2';
   window.CONTENT_VERSION = '3.26.2';
-  window.STATIC_URL = './static/';
+  window.STATIC_URL = 'https://playorna.com/static/';
   window.SERVER_URI = 'https://playorna.com';
   window.CHAT_URI = 'wss://chat.orna.gg/ws/';
   window.DEBUG = false;
